@@ -27,6 +27,9 @@ import env, { envVar } from '@chrishrb/middy-env';
 
 const handler = middy(() => {});
 
+// or export it from outside
+process.env.MY_EXAMPLE_VARIABLE = 'myValue';
+
 handler
   .use(
     env({
@@ -37,11 +40,8 @@ handler
     }),
   )
   .before(async (request) => {
-    expect(request.context.envVariables).not.toBeNull();
-    expect(request.context.envVariables.myExampleVariable).toBeTypeOf(
-      'boolean',
-    );
-    expect(request.context.envVariables.myExampleVariable).toBe(expected);
+    // Full typescript support here
+    console.log(request.context.envVariables.myExampleVariable);
   });
 
 await handler(event, context);
