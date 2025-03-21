@@ -1,7 +1,7 @@
 {
   "name": "@chrishrb/middy-env",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "ci": "pnpm install --frozen-lockfile",
@@ -27,6 +27,11 @@
   "bugs": {
     "url": "https://github.com/chrishrb/middy-env/issues"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "homepage": "https://github.com/chrishrb/middy-env#readme",
   "dependencies": {},
   "devDependencies": {
